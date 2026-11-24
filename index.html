@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: mediastream:; font-src 'self' data:; connect-src 'self' data: blob:; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f2f2f7" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="QR">
+  <meta name="description" content="Generator kodów QR i przesyłanie plików ruchomym kodem QR – bez internetu i parowania.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icon-180.png">
+  <title>QR</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="window">
+    <header class="titlebar" id="titlebar">
+      <div class="titlebar-left"></div>
+      <div class="titlebar-title">QR</div>
+      <div class="titlebar-right">
+        <div class="traffic" id="traffic">
+          <button class="tl min" data-act="minimize" title="Minimalizuj"><svg viewBox="0 0 10 10"><path d="M2.5 5h5"/></svg></button>
+          <button class="tl max" data-act="maximize" title="Maksymalizuj"><svg viewBox="0 0 10 10"><path d="M3 6.8V3h3.8zM7 3.2V7H3.2z"/></svg></button>
+          <button class="tl close" data-act="close" title="Zamknij"><svg viewBox="0 0 10 10"><path d="M3 3l4 4M7 3L3 7"/></svg></button>
+        </div>
+      </div>
+    </header>
+    <main id="screen" class="screen"></main>
+  </div>
+  <div id="sheet-root"></div>
+  <div id="toast-root"></div>
+  <script src="vendor/capacitor.js"></script>
+  <script src="vendor/jsQR.js"></script>
+  <script src="vendor/qrcode-generator.js"></script>
+  <script src="core/base45.js"></script>
+  <script src="core/fountain.js"></script>
+  <script src="core/transfer.js"></script>
+  <script src="core/content.js"></script>
+  <script src="icons.js"></script>
+  <script src="ui.js"></script>
+  <script src="platform.js"></script>
+  <script src="qr.js"></script>
+  <script src="rx.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
