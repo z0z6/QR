@@ -1,7 +1,7 @@
 'use strict';
 // Service worker wersji webowej: po pierwszej wizycie generator i strona odbioru działają bez internetu.
 // Nazwa pamięci zawiera wersję aplikacji – nowe wydanie podmienia pliki (sprawdza to test).
-const CACHE = 'qr-1.0.0';
+const CACHE = 'qr-1.0.1';
 const FILES = [
   './', 'index.html', 'odbior.html', 'styles.css', 'manifest.webmanifest',
   'app.js', 'rx.js', 'odbior.js', 'qr.js', 'ui.js', 'icons.js', 'platform.js',

@@ -1,7 +1,7 @@
 {
   "name": "qr-transmisja",
   "productName": "QR",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generator kodów QR i przesyłanie plików ruchomym kodem QR (Windows, Linux, macOS, Android, przeglądarka)",
   "main": "src/main/main.js",
   "author": "projektnumer4",

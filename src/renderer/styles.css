@@ -305,7 +305,10 @@ textarea.input.area { height: auto; padding: 9px 11px; resize: vertical; min-hei
 .platform-electron .tabbar { padding-top: 6px; }
 
 /* generator */
-.gen { display: grid; grid-template-columns: 1fr; gap: 16px; align-items: start; }
+.gen { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start; }
+/* elementy siatki nie mogą się rozpychać szerzej niż ekran (np. przewijany rząd przycisków rodzaju treści) */
+.gen-editor, .gen-side, .chips { min-width: 0; max-width: 100%; }
+.view > .page { overflow-x: clip; }
 @media (min-width: 1060px) { .gen { grid-template-columns: minmax(0, 1fr) 380px; } .gen-side { position: sticky; top: 0; } }
 @media (min-width: 860px) and (max-width: 1059px) { .gen { grid-template-columns: minmax(0, 1fr) 330px; } .gen-side { position: sticky; top: 0; } }
 .chips { display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 12px; scrollbar-width: none; flex-wrap: wrap; }
@@ -506,3 +509,13 @@ textarea.input.area { height: auto; padding: 9px 11px; resize: vertical; min-hei
 .scan-result .rx-text { max-height: 32vh; margin-bottom: 12px; box-shadow: none; }
 .secret-box.small { white-space: pre-wrap; margin-bottom: 12px; font-size: 14px; }
 .dragging .view { outline: 3px dashed var(--accent); outline-offset: -8px; }
+/* wąski ekran: podgląd kodu zaraz pod polem treści, „Wygląd kodu” i historia niżej */
+@media (max-width: 859px) {
+  .gen { display: flex; flex-direction: column; gap: 0; }
+  .gen-editor, .gen-side { display: contents; }
+  .gen .chips { order: 1; }
+  .gen-editor > .card { order: 2; }
+  .gen-preview { order: 3; }
+  .gen-editor > .look { order: 4; margin-bottom: 16px; }
+  .gen-history { order: 5; }
+}
